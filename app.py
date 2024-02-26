@@ -1,3 +1,5 @@
+st.title("Simulation de la trajectoire d'un électron dans un champ magnétique")
+st.markdown("###Variation du gradient du champ magnétique")
 # On importe les bibliothèques utiles
 # -----------------------------------
 import streamlit as st
