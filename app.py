@@ -5,9 +5,13 @@ from matplotlib import pyplot as plt
 import numpy as np
 from scipy.integrate import odeint
 
+st.set_page_config(
+   page_title="DM6-Adèle"
+)
+
 st.title("Simulation de la trajectoire d'un électron dans un champ magnétique")
 st.markdown("### Variation du gradient du champ magnétique")
-st.markdown("[Questions précédentes et code](https://adelemarcon.github.io/DM6adele.html)")
+st.link_button("Questions précédentes et code", "https://adelemarcon.github.io/DM6adele.html",type="primary",use_container_width=True)
 
 # Valeurs numériques caractéristiques du problème en unités SI
 # ------------------------------------------------------------
