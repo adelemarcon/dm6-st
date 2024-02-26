@@ -7,6 +7,7 @@ from scipy.integrate import odeint
 
 st.title("Simulation de la trajectoire d'un électron dans un champ magnétique")
 st.markdown("### Variation du gradient du champ magnétique")
+st.markdown("[Questions précédentes et code](https://adelemarcon.github.io/DM6adele.html)")
 
 # Valeurs numériques caractéristiques du problème en unités SI
 # ------------------------------------------------------------
