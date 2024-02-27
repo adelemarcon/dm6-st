@@ -4,6 +4,7 @@ import streamlit as st
 from matplotlib import pyplot as plt
 import numpy as np
 from scipy.integrate import odeint
+import plotly.express as px
 
 st.set_page_config(
    page_title="DM6-Adèle"
@@ -45,12 +46,68 @@ Wsol=odeint(systeme,W0,t)                        # la ligne qui fait le job !
 x=Wsol[:,0]                                      # extraction de la position
 y=Wsol[:,1]                                
 
-# Représentation graphique 
+# Représentation graphique
 # ------------------------
-plt.plot(1e6*x,1e6*y)
-plt.xlabel("x(µm)")
-plt.ylabel("y(µm)")
-plt.title("Document 1: Trajectoire de l'électron")
-plt.grid()
-plt.axis('equal')
-st.pyplot(plt.gcf())
+
+# En utilisant matplotlib
+# plt.plot(1e6*x,1e6*y)
+# plt.xlabel("x(µm)")
+# plt.ylabel("y(µm)")
+# plt.title("Document 1: Trajectoire de l'électron")
+# plt.grid()
+# plt.axis('equal')
+#st.pyplot(plt.gcf())
+
+
+# En utilisant plotly
+
+fig = px.line(dict(x=x * 1e6, y=y * 1e6), x="x", y="y", 
+              title = "Trajectoire de l'électron", 
+              labels=dict(x="x (µm)", y="y (µm)"),
+              height=700,
+              template='plotly_white'
+)
+
+fig.update_layout(
+    margin=dict(l=20, r=40, t=60, b=20),
+    paper_bgcolor="white",
+    plot_bgcolor='#E4EBEC',
+    title_font_color='black',
+    title_font_size=20,
+    title_font_family='arial',
+    title_x=0.5,
+    title_xanchor='center',
+    font_color='black'
+)
+fig.update_traces(
+    line_color='#2471A3'
+)
+fig.update_xaxes(
+    mirror=True,
+    ticks='outside',
+    showline=True,
+    linecolor='black',
+    title_font_color='black',
+    tickcolor='black',
+    tickwidth=2,
+    zerolinecolor='white',
+    tickfont_color='black',
+    showgrid=True,
+    gridwidth=1,
+    gridcolor='white'
+)
+fig.update_yaxes(
+    mirror=True,
+    ticks='outside',
+    showline=True,
+    linecolor='black',
+    title_font_color='black',
+    tickcolor='black',
+    tickwidth=2,
+    zerolinecolor='white',
+    tickfont_color='black',
+    showgrid=True,
+    gridwidth=1,
+    gridcolor='white'
+)
+st.plotly_chart(fig, use_container_width=False)
