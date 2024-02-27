@@ -22,7 +22,7 @@ v0 = 3e6            # vitesse initiale de l'électron (m/s)
 B0= 3.1             # valeur du champ magnétique (T)
 Lambda = 9.1e-20    # coefficient de frottement fluide (kg/s)
 
-k = st.slider('k: Gradient du champ magnétique', min_value=100000, max_value=2000000, step=1000)
+k = st.slider('k: Gradient du champ magnétique', min_value=100000, max_value=2000000, step=100)
 # Paramètres de la résolution numérique
 # ------------------------------------- 
 t_fin = 60e-12                     # durée
