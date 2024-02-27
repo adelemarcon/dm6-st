@@ -36,8 +36,8 @@ def systeme (W,t):
     Wp = np.zeros(4)                                                        # tableau vide pour stocker les dérivées
     Wp[0] = W[2]                                                            # première équation
     Wp[1] = W[3]                                                            # deuxième équation 
-    Wp[2] = ((-q * B0) / m) * W[3] * (W[0] * k +1) - (Lambda / m) * W[2]      # troisième équation
-    Wp[3] = ((q * B0) / m) * W[2] * (W[0] * k +1) - (Lambda /m) * W[3]       # quatrième équation 
+    Wp[2] = ((-q * B0) / m) * W[3] * (W[0] * k +1) - (Lambda / m) * W[2]    # troisième équation
+    Wp[3] = ((q * B0) / m) * W[2] * (W[0] * k +1) - (Lambda /m) * W[3]      # quatrième équation 
     return Wp
 
 # Intégration numérique à l'aide d'odeint
